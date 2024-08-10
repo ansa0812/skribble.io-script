@@ -2053,7 +2053,7 @@
         }
     }
     function ka(e) {
-        (!O[2].hints || O[2].hints.length < e.length) && va([e.length], !0);
+        (!O[2].hints || O[2].hints.length < e.length) && va(e.split(""), !0);
         for (var t = [], n = 0; n < e.length; n++)
             t.push([n, e.charAt(n)]);
         ba(t)
@@ -2162,27 +2162,11 @@
             o && r && b(I("$ is voting to kick $ ($/$)", [o.name, r.name, i, l]), "", v(Re), !0);
             break;
         case Aa:
-            try {
-                a = W(n.id); // Find the player object
-                if (a) {
-                    if (typeof n.word !== 'string' || n.word.trim() === '') {
-                        throw new Error("Invalid word input detected.");
-                    }
-                    // Sync with the server or other players if necessary
-                    syncWithServer(a.id, n.word); // This is a hypothetical function
-
-                    b(I("$ guessed the word!", a.name), "", v(Ae), !0).classList.add("guessed");
-                    Ja(a, !0); // Mark the player as having guessed the word
-                    N.playSound(Tn); // Play the correct answer sound
-                    if (n.id == M) {
-                        ka(n.word); // Perform additional correct answer actions (like revealing the word)
-                    }
-                }
-            } catch (error) {
-                console.error("Synchronization error:", error);
-                alert("An error occurred while syncing your answer. Please try again.");
-            }
-            break;    
+            (a = W(n.id)) && (b(I("$ guessed the word!", a.name), "", v(Ae), !0).classList.add("guessed"),
+            Ja(a, !0),
+            N.playSound(Tn),
+            n.id == M) && ka(n.word);
+            break;
         case xa:
             (a = W(n.id)) && (o = a,
             r = 0 == n.vote ? "thumbsdown.gif" : "thumbsup.gif",
