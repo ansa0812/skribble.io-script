@@ -696,7 +696,7 @@
         "Your report for '$' has been sent!": "Deine Meldung für '$' wurde abgesendet!",
         "Enter your name": "Gib dein Namen ein",
         "Filter rooms by name here...": "Suche nach Räume hier...",
-        "Type your guess here...": "Rate das gesuchte Wort hier...",
+        "Type your fucking word here...": "Rate das gesuchte Wort hier...",
         "Everyone guessed the word!": "Jeder hat das Wort erraten!",
         "The drawer left the game!": "Der Zeichner hat das Spiel verlassen!",
         "Time is up!": "Die Zeit ist abgelaufen!",
